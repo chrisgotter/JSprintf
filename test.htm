@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="print.js" type="text/javascript"></script>
+    <script src="test.js" type="text/javascript"></script>
+    <!--<link href="test.css" type="text/css" rel="stylesheet">-->
+  </head>
+  <body>
+    <h1>Try it out!</h1>
+    <table>
+      <colgroup>
+        <col id="controls_col">
+        <col id="editor_col">
+        <col id="console_col">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Options</th>
+          <th>Code</th>
+          <th>Run</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          
+          <td><input type="submit" onclick="runCode();"></td>
+            <!--http://www.cplusplus.com/reference/cstdio/printf/-->
+          <td rowspan="3">
+            <textarea id="editor" rows="30" cols="70">/* printf example */
+/* src="https://googledrive.com/host/0B-5Y1OoryQYuWXJKLVcwZWh1eEk/print.js" */
+
+function start_test()
+{
+  printf ("Characters: %c %c \n", 'a', 65);
+  printf ("Decimals: %d %ld\n", 1977, 650000);
+  printf ("Preceding with blanks: %10d \n", 1977);
+  printf ("Preceding with zeros: %010d \n", 1977);
+  printf ("Some different radices: %d %x %o %#x %#o \n", 100, 100, 100, 100, 100);
+  printf ("floats: %4.f %+.0e %E \n", 3.1416, 3.1416, 3.1416);
+  printf ("Width trick: %*d \n", 5, 10);
+  printf ("%s \n", "A string");
+
+  printf ("arrays: %[->]v\n", [3.1416, 3.1416, 3.1416]);
+  printf ("Boolean values: %b \n", true);
+  printf ("Date values (implied toString): \n%D \n\n", new Date());
+  printf ("Date values (from format string): \n%[ddd MMM dd yyyy HH:mm:ss zzz]D \n\n", new Date());
+  printf ("Date values (from toString): \n%s \n\n", new Date().toString());
+
+  printf ("Date values (UTC modifier): \n%tD \n", new Date());
+  printf ("Date values: \n%s \n\n", new Date().toUTCString());
+  printf ("Currency values: %$ \n\n", 5);
+
+  Object.prototype.objectPrintf = function(){return "text"};;
+
+  printf ("Object Defined values: %O", new String());
+
+  return 0;
+}
+
+</textarea></td>
+          <td rowspan="3"><textarea id="console" rows="30" cols="70" readonly="readonly"></textarea></td>
+        </tr>
+        <tr>
+          <td><input type="reset" onclick="clearTextAreas();"></td>
+          
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    
+    
+  </body>
+</html>
